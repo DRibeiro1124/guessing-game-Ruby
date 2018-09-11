@@ -15,12 +15,12 @@ puts "Pick a number between #{MIN} and #{MAX}"
 
 
 while answer != "y"
+  counter += 1 unless answer == "y"
   puts "Is your number #{guess}?"
   print "(y)es, (h)igher or (l)ower: "
   answer = gets.chomp
   
   if answer == "h"
-    counter += 1
     lower = guess + 1
     guess = ((upper - lower ) / 2) + lower 
     print guess
@@ -28,7 +28,6 @@ while answer != "y"
   end
 
   if answer == "l"
-    counter += 1
     upper = guess - 1
     guess =((upper - lower) / 2) + upper
   end
